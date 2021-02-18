@@ -5,23 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | Todo app</title>
 
 </head>
 <body>
-
-  Todo
-
-  <!-- Add dynamic number --> items left
-
-  All
-  Active 
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
+  <div class="header">
+    <h1>To Do</h1>
+    <div class="create-item">
+      <input type="text" placeholder="Create a new todo...">
+    </div>
+  </div>
+  <div class="list-container">
+    <div class="list">
+      <div class="item">
+        <span class="circle"></span>
+        <p>Complete online Javascript course</p>
+        <img class="X" src="images/icon-cross.svg">
+      </div>
+    </div>
+  </div>
 
 
 </body>

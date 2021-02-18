@@ -1,0 +1,21 @@
+.header {
+    border: 2px solid black;
+    padding-bottom: 30px;
+}
+
+.list-container {
+    border: 2px solid black;
+    .list {
+        .item {
+            border: 1px solid black;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .X {
+                // margin-left: auto Really good for getting the last item to the far right 
+                margin-left: auto;
+                margin-right: 20px;
+            }
+        }
+    }
+}
