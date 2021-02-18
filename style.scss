@@ -11,6 +11,18 @@
             display: flex;
             flex-direction: row;
             align-items: center;
+            p {
+                margin-left: 20px;
+            }
+            .circle {
+                min-height: 30px;
+                min-width: 30px;
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                border: 2px solid #E3E4F1;
+                margin-left: 15px;
+            }
             .X {
                 // margin-left: auto Really good for getting the last item to the far right 
                 margin-left: auto;
