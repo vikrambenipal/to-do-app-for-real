@@ -1,11 +1,11 @@
 const input = document.getElementById("input");
 const form = document.getElementById("form");
 const list = document.getElementById("list");
-const x_list = document.getElementsByClassName("X");
+let x_list = document.getElementsByClassName("X");
 
-console.log(Array.from(list.children));
-
-Array.from(document.getElementsByClassName("X")).forEach((x,i) => {
+// Remove any initial items in list 
+Array.from(x_list).forEach((x,i) => {
+    console.log(i);
     x.addEventListener('click', (e) => {
         x.parentElement.remove();
     })
@@ -33,6 +33,11 @@ form.addEventListener('submit', (e) => {
         newItem.appendChild(task);
         newItem.appendChild(x);
         list.appendChild(newItem);
+
+        // Add event listener to x
+        x.addEventListener('click', (e) => {
+            x.parentElement.remove();
+        })
 
         input.value = "";
     }
