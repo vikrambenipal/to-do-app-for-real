@@ -1,8 +1,24 @@
+// list
 const input = document.getElementById("input");
 const form = document.getElementById("form");
 const list = document.getElementById("list");
 const x_list = document.getElementsByClassName("X");
 const circle_list = document.getElementsByClassName("circle");
+// filtering options
+const all = document.getElementById("all");
+const active = document.getElementById("active");
+const completed = document.getElementById("completed");
+
+const arrList = [];
+console.log(list.length);
+console.log(arrList);
+completed.addEventListener('click', () => {
+    const newList = Array.from(list).filter(item => {
+        return false;
+    })
+    console.log(newList);
+})
+
 
 // Toggle items to be complete 
 Array.from(circle_list).forEach(circle => {
@@ -13,7 +29,7 @@ Array.from(circle_list).forEach(circle => {
 })
 
 // Remove any initial items in list 
-Array.from(x_list).forEach((x,i) => {
+Array.from(x_list).forEach(x => {
     x.addEventListener('click', (e) => {
         x.parentElement.remove();
     })
@@ -35,6 +51,10 @@ form.addEventListener('submit', (e) => {
         // Assign class names to nodes 
         newItem.classList.add('item');
         circle.classList.add('circle');
+        circle.addEventListener('click', (e) => {
+            circle.classList.toggle("circle-active");
+            circle.nextElementSibling.classList.toggle("p-active");
+        })
         x.classList.add('X');
 
         // Append new item to list 

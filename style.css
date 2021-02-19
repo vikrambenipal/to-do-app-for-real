@@ -99,6 +99,10 @@
   cursor: pointer;
 }
 
+.all-active-complete h4:hover {
+  color: #3a7bfd;
+}
+
 .instr {
   text-align: center;
 }
