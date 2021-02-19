@@ -18,8 +18,14 @@
             p {
                 margin-left: 20px;
                 cursor: move;
+                text-decoration: line-through;
+                color: #D1D2DA;
             }
             .circle {
+                background-image: url(images/icon-check.svg), linear-gradient(0.30turn, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+                background-repeat: no-repeat;
+                background-position: center;
+
                 min-height: 30px;
                 min-width: 30px;
                 height: 30px;
@@ -29,6 +35,8 @@
                 margin-left: 15px;
                 cursor: pointer;
             }
+
+
             .X {
                 // margin-left: auto Really good for getting the last item to the far right 
                 margin-left: auto;
@@ -49,7 +57,7 @@
     }
 }
 
-.all-after-complete {
+.all-active-complete {
     margin-top: 20px;
     display: flex;
     flex-direction: row;
@@ -57,7 +65,8 @@
     align-items: center;
     border: 1px solid black;
     h4 {
-        padding: 0px 10px;
+        padding: 0px 15px;
+        cursor: pointer;
     }
 }
 

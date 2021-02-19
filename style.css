@@ -28,9 +28,14 @@
 .list-container #list .item p {
   margin-left: 20px;
   cursor: move;
+  text-decoration: line-through;
+  color: #D1D2DA;
 }
 
 .list-container #list .item .circle {
+  background-image: url(images/icon-check.svg), linear-gradient(0.3turn, #57ddff, #c058f3);
+  background-repeat: no-repeat;
+  background-position: center;
   min-height: 30px;
   min-width: 30px;
   height: 30px;
@@ -65,7 +70,7 @@
   margin-left: auto;
 }
 
-.all-after-complete {
+.all-active-complete {
   margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -83,8 +88,9 @@
   border: 1px solid black;
 }
 
-.all-after-complete h4 {
-  padding: 0px 10px;
+.all-active-complete h4 {
+  padding: 0px 15px;
+  cursor: pointer;
 }
 
 .instr {
