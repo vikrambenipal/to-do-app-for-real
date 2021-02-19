@@ -9,9 +9,18 @@ const all = document.getElementById("all");
 const active = document.getElementById("active");
 const completed = document.getElementById("completed");
 
+all.addEventListener('click', () => {
+    $(".item").show();
+})
 
 active.addEventListener('click', () => {
-    $("div.div-active").hide();
+    $(".item.div-active").hide();
+    $(".item:not(.div-active)").show();
+})
+
+completed.addEventListener('click', () => {
+    $(".item:not(.div-active)").hide();
+    $(".item.div-active").show();
 })
 
 
