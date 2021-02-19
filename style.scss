@@ -1,3 +1,7 @@
+.dragging {
+    opacity: 0.5;
+}
+
 .header {
     border: 2px solid black;
     padding-bottom: 30px;
@@ -13,6 +17,7 @@
             align-items: center;
             p {
                 margin-left: 20px;
+                cursor: move;
             }
             .circle {
                 min-height: 30px;
@@ -32,4 +37,30 @@
             }
         }
     }
+}
+
+#items-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid black;
+    #clear {
+        margin-left: auto;
+    }
+}
+
+.all-after-complete {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    h4 {
+        padding: 0px 10px;
+    }
+}
+
+.instr {
+    text-align: center;
 }

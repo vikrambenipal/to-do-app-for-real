@@ -1,3 +1,7 @@
+.dragging {
+  opacity: 0.5;
+}
+
 .header {
   border: 2px solid black;
   padding-bottom: 30px;
@@ -23,6 +27,7 @@
 
 .list-container #list .item p {
   margin-left: 20px;
+  cursor: move;
 }
 
 .list-container #list .item .circle {
@@ -40,5 +45,49 @@
   margin-left: auto;
   margin-right: 20px;
   cursor: pointer;
+}
+
+#items-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid black;
+}
+
+#items-left #clear {
+  margin-left: auto;
+}
+
+.all-after-complete {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid black;
+}
+
+.all-after-complete h4 {
+  padding: 0px 10px;
+}
+
+.instr {
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
