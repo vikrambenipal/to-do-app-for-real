@@ -9,14 +9,9 @@ const all = document.getElementById("all");
 const active = document.getElementById("active");
 const completed = document.getElementById("completed");
 
-const arrList = [];
-console.log(list.length);
-console.log(arrList);
-completed.addEventListener('click', () => {
-    const newList = Array.from(list).filter(item => {
-        return false;
-    })
-    console.log(newList);
+
+active.addEventListener('click', () => {
+    $("div.div-active").hide();
 })
 
 
@@ -25,6 +20,7 @@ Array.from(circle_list).forEach(circle => {
     circle.addEventListener('click', (e) => {
         circle.classList.toggle("circle-active");
         circle.nextElementSibling.classList.toggle("p-active");
+        circle.parentElement.classList.toggle("div-active");
     })
 })
 
@@ -54,6 +50,7 @@ form.addEventListener('submit', (e) => {
         circle.addEventListener('click', (e) => {
             circle.classList.toggle("circle-active");
             circle.nextElementSibling.classList.toggle("p-active");
+            circle.parentElement.classList.toggle("div-active");
         })
         x.classList.add('X');
 
