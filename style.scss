@@ -58,6 +58,10 @@
     border: 1px solid black;
     #clear {
         margin-left: auto;
+        cursor: pointer;
+    }
+    #clear:hover {
+        color: hsl(220, 98%, 61%);
     }
 }
 

@@ -10,6 +10,15 @@ let numItems = $(".item").length;
 const num_left = document.getElementById("list-len");
 num_left.innerText = numItems;
 
+// Clear items from list 
+const clear = document.getElementById("clear");
+clear.addEventListener('click', (e) => {
+    let len = $(".item.div-active").length;
+    $(".item.div-active").remove();
+    numItems -= len;
+    num_left.innerText = numItems;
+})
+
 // Filtering 
 const all = document.getElementById("all");
 const active = document.getElementById("active");

@@ -78,6 +78,11 @@
 
 #items-left #clear {
   margin-left: auto;
+  cursor: pointer;
+}
+
+#items-left #clear:hover {
+  color: #3a7bfd;
 }
 
 .all-active-complete {
