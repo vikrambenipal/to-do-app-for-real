@@ -4,25 +4,27 @@ const form = document.getElementById("form");
 const list = document.getElementById("list");
 const x_list = document.getElementsByClassName("X");
 const circle_list = document.getElementsByClassName("circle");
-// filtering options
+
+// Number of items left 
+let numItems = $(".item").length;
+const num_left = document.getElementById("list-len");
+num_left.innerText = numItems;
+
+// Filtering 
 const all = document.getElementById("all");
 const active = document.getElementById("active");
 const completed = document.getElementById("completed");
-
 all.addEventListener('click', () => {
     $(".item").show();
 })
-
 active.addEventListener('click', () => {
     $(".item.div-active").hide();
     $(".item:not(.div-active)").show();
 })
-
 completed.addEventListener('click', () => {
     $(".item:not(.div-active)").hide();
     $(".item.div-active").show();
 })
-
 
 // Toggle items to be complete 
 Array.from(circle_list).forEach(circle => {
@@ -37,6 +39,9 @@ Array.from(circle_list).forEach(circle => {
 Array.from(x_list).forEach(x => {
     x.addEventListener('click', (e) => {
         x.parentElement.remove();
+        // update number of items left on list 
+        --numItems;
+        num_left.innerText = numItems;
     })
 })
 
@@ -69,9 +74,16 @@ form.addEventListener('submit', (e) => {
         newItem.appendChild(x);
         list.appendChild(newItem);
 
+        // update number of items left on list 
+        ++numItems;
+        num_left.innerText = numItems;
+
         // Add event listener to x
         x.addEventListener('click', (e) => {
             x.parentElement.remove();
+            // update number of items left on list 
+            --numItems;
+            num_left.innerText = numItems;
         })
 
         // Add draggable property to new item 
