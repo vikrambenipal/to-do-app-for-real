@@ -2,6 +2,17 @@
   opacity: 0.5;
 }
 
+.p-active {
+  text-decoration: line-through;
+  color: #D1D2DA;
+}
+
+.circle-active {
+  background-image: url(images/icon-check.svg), linear-gradient(0.3turn, #57ddff, #c058f3);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .header {
   border: 2px solid black;
   padding-bottom: 30px;
@@ -12,6 +23,7 @@
 }
 
 .list-container #list .item {
+  cursor: move;
   border: 1px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,15 +39,9 @@
 
 .list-container #list .item p {
   margin-left: 20px;
-  cursor: move;
-  text-decoration: line-through;
-  color: #D1D2DA;
 }
 
 .list-container #list .item .circle {
-  background-image: url(images/icon-check.svg), linear-gradient(0.3turn, #57ddff, #c058f3);
-  background-repeat: no-repeat;
-  background-position: center;
   min-height: 30px;
   min-width: 30px;
   height: 30px;

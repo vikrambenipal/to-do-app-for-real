@@ -1,6 +1,15 @@
 .dragging {
     opacity: 0.5;
 }
+.p-active {
+    text-decoration: line-through;
+    color: #D1D2DA;
+}
+.circle-active {
+    background-image: url(images/icon-check.svg), linear-gradient(0.30turn, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 .header {
     border: 2px solid black;
@@ -11,21 +20,15 @@
     border: 2px solid black;
     #list {
         .item {
+            cursor: move;
             border: 1px solid black;
             display: flex;
             flex-direction: row;
             align-items: center;
             p {
                 margin-left: 20px;
-                cursor: move;
-                text-decoration: line-through;
-                color: #D1D2DA;
             }
             .circle {
-                background-image: url(images/icon-check.svg), linear-gradient(0.30turn, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-                background-repeat: no-repeat;
-                background-position: center;
-
                 min-height: 30px;
                 min-width: 30px;
                 height: 30px;
@@ -35,8 +38,6 @@
                 margin-left: 15px;
                 cursor: pointer;
             }
-
-
             .X {
                 // margin-left: auto Really good for getting the last item to the far right 
                 margin-left: auto;

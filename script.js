@@ -2,42 +2,15 @@ const input = document.getElementById("input");
 const form = document.getElementById("form");
 const list = document.getElementById("list");
 const x_list = document.getElementsByClassName("X");
+const circle_list = document.getElementsByClassName("circle");
 
-// Making the list draggable 
-// Toggle opacity on/off drag 
-const items = document.getElementsByClassName('item');
-Array.from(items).forEach(item => {
-    item.addEventListener('dragstart', () => {
-        item.classList.add('dragging');
-    })
-    item.addEventListener('dragend', () => {
-        item.classList.remove('dragging');
+// Toggle items to be complete 
+Array.from(circle_list).forEach(circle => {
+    circle.addEventListener('click', (e) => {
+        circle.classList.toggle("circle-active");
+        circle.nextElementSibling.classList.toggle("p-active");
     })
 })
-// Moving items within list container
-list.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    const afterElement = getDragAfterElement(list, e.clientY);
-    const draggable = document.querySelector('.dragging');
-    if(afterElement == null) {
-        list.appendChild(draggable);
-    }else{
-        list.insertBefore(draggable, afterElement);
-    }
-})
-
-function getDragAfterElement(container, y){
-    const draggableElements = [...container.querySelectorAll('.item:not(.dragging)')];
-    return draggableElements.reduce((closest, child) => {
-        const box = child.getBoundingClientRect();
-        const offset = y - box.top - box.height / 2;
-        if(offset < 0 && offset > closest.offset) {
-             return { offset: offset, element: child }
-        }else {
-            return closest;
-        }
-    }, {offset: Number.NEGATIVE_INFINITY }).element;
-}
 
 // Remove any initial items in list 
 Array.from(x_list).forEach((x,i) => {
@@ -86,3 +59,39 @@ form.addEventListener('submit', (e) => {
         input.value = "";
     }
 })
+
+// Making the list draggable 
+// Toggle opacity on/off drag 
+const items = document.getElementsByClassName('item');
+Array.from(items).forEach(item => {
+    item.addEventListener('dragstart', () => {
+        item.classList.add('dragging');
+    })
+    item.addEventListener('dragend', () => {
+        item.classList.remove('dragging');
+    })
+})
+// Moving items within list container
+list.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    const afterElement = getDragAfterElement(list, e.clientY);
+    const draggable = document.querySelector('.dragging');
+    if(afterElement == null) {
+        list.appendChild(draggable);
+    }else{
+        list.insertBefore(draggable, afterElement);
+    }
+})
+
+function getDragAfterElement(container, y){
+    const draggableElements = [...container.querySelectorAll('.item:not(.dragging)')];
+    return draggableElements.reduce((closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        if(offset < 0 && offset > closest.offset) {
+             return { offset: offset, element: child }
+        }else {
+            return closest;
+        }
+    }, {offset: Number.NEGATIVE_INFINITY }).element;
+}
