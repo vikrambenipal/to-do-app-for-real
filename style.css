@@ -77,7 +77,6 @@
 }
 
 #items-left #clear {
-  margin-left: auto;
   cursor: pointer;
 }
 
@@ -100,7 +99,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid black;
+  margin: 0 auto;
 }
 
 .all-active-complete h4 {
