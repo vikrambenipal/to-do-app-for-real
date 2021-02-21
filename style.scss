@@ -64,16 +64,19 @@
     #clear:hover {
         color: hsl(220, 98%, 61%);
     }
+    .all-active-complete {
+        visibility: hidden;
+    }
 }
 
 .all-active-complete {
-    margin-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    //border: 1px solid black;
+    border: 1px solid black;
     margin: 0 auto;
+    margin-top: 20px;
     h4 {
         padding: 0px 15px;
         cursor: pointer;
@@ -85,4 +88,20 @@
 
 .instr {
     text-align: center;
+}
+
+@media all and (min-width: 1100px){
+    h1 {
+        color: green;
+    }
+    #items-left {
+        .all-active-complete {
+            visibility: visible;
+            margin-top: 0px;
+            border: none;
+        }
+    }
+    .all-active-complete {
+        visibility: hidden;
+    }
 }
